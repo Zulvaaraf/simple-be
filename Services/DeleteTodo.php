@@ -1,10 +1,21 @@
 <?php
 
-function deleteTodo(int $number) {
+function deleteTodo(int $number): bool {
     global $todo;
 
-    if (isset($todo[$number - 1])) {
-        unset($todo[$number - 1]);
+    if ($number > sizeof($todo)) {
+        return false;
+    }
+
+    if (isset($todo[$number])) {
+        // $todo = array_values($todo);
+
+        for ($i = $number; $i <= sizeof($todo); $i++) {
+            $todo[$i] = $todo[$i + 1];
+        }
+        
+        unset($todo[sizeof($todo)]);
+
         echo "Todo has been deleted\n";
         return true;
     } 

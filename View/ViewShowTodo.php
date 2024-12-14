@@ -10,18 +10,18 @@ function viewShowTodo(){
     while(true) {
         showTodo();
 
-        $pilihan = input("Pilih");
+        $pilihan = input("CHOSE NUMBER");
 
         if ($pilihan == "1") {
-            viewShowTodo();
+            viewAddTodo();
         } elseif ($pilihan == "2") {
             ViewDeleteTodo();
         } elseif ($pilihan == "x") {
+            echo "DONE...";
             break;
         } else {
-            echo "Pilihan tidak dimengerti\n";
+            echo "ERROR! INVALID INPUT..\n";
+            break;
         }
     }
-
-    echo "Goodbye!";
 }

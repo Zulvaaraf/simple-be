@@ -7,4 +7,9 @@ require_once "Services/DeleteTodo.php";
 require_once "View/ViewAddTodo.php";
 require_once "View/ViewShowTodo.php";
 require_once "View/ViewDeleteTodo.php";
+require_once "Helper/Input.php";
+
+echo "Todo APP\n";
+
+viewShowTodo();
 

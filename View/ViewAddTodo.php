@@ -1,15 +1,15 @@
 <?php
 
-require_once "Helper/Input.php";
 require_once "Model/Todolist.php";
 require_once "Services/AddTodo.php";
+require_once "Helper/Input.php";
 
 function viewAddTodo() {
-    $todo = input("Todo");
+    $todo = input("ADD TODOLIST");
 
     if ($todo == "x") {
-        echo "Cancelled\n";
+        return "Cancelled\n";
     }
-    
+
     addTodo($todo);
 }

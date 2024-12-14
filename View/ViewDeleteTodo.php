@@ -4,7 +4,7 @@ require_once "Helper/Input.php";
 require_once "Services/DeleteTodo.php";
 
 function ViewDeleteTodo() {
-    $pilihan = input("Number");
+    $pilihan = input("CHOSE NUMBER TODO");
 
     if ($pilihan == "x") {
         echo "Cancel delete todo\n";
