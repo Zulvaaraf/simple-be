@@ -10,42 +10,40 @@ use Repository\TodolistRepositoryImpl;
 use Service\TodolistServicesImpl;
 use View\TodolistView;
 
-function testViewShowTodoList(): void {
-    $todolistRepository = new TodolistRepositoryImpl();
-    $todolistService = new TodolistServicesImpl($todolistRepository);
-    $todolistView = new TodolistView($todolistService);
+// function testViewShowTodoList(): void {
+//     $todolistRepository = new TodolistRepositoryImpl();
+//     $todolistService = new TodolistServicesImpl($todolistRepository);
+//     $todolistView = new TodolistView($todolistService);
 
-    $todolistService->addTodoList("Coding 1 Hours");
-    $todolistService->addTodoList("Coding 2 Hours");
-    $todolistService->addTodoList("Coding 3 Hours");
+//     $todolistService->addTodoList("Coding 1 Hours");
+//     $todolistService->addTodoList("Coding 2 Hours");
+//     $todolistService->addTodoList("Coding 3 Hours");
 
-    $todolistView->showTodoList();
-}
+//     $todolistView->showTodoList();
+// }
 
-function testViewAddTodoList(): void {
-    $todolistRepository = new TodolistRepositoryImpl();
-    $todolistService = new TodolistServicesImpl($todolistRepository);
-    $todolistView = new TodolistView($todolistService);
+// function testViewAddTodoList(): void {
+//     $todolistRepository = new TodolistRepositoryImpl();
+//     $todolistService = new TodolistServicesImpl($todolistRepository);
+//     $todolistView = new TodolistView($todolistService);
 
-    $todolistService->addTodoList("Coding 1 Hours");
-    $todolistService->addTodoList("Coding 2 Hours");
+//     $todolistService->addTodoList("Coding 1 Hours");
+//     $todolistService->addTodoList("Coding 2 Hours");
 
-    $todolistView->addTodoList();
+//     $todolistView->addTodoList();
 
-    $todolistView->showTodoList();
-}
+//     $todolistView->showTodoList();
+// }
 
-function testDeleteTodoLIst(): void {
-    $todolistRepository = new TodolistRepositoryImpl();
-    $todolistService = new TodolistServicesImpl($todolistRepository);
-    $todolistView = new TodolistView($todolistService);
+// function testDeleteTodoLIst(): void {
+//     $todolistRepository = new TodolistRepositoryImpl();
+//     $todolistService = new TodolistServicesImpl($todolistRepository);
+//     $todolistView = new TodolistView($todolistService);
 
-    $todolistService->addTodoList("Coding 1 Hours");
-    $todolistService->addTodoList("Coding 2 Hours");
+//     $todolistService->addTodoList("Coding 1 Hours");
+//     $todolistService->addTodoList("Coding 2 Hours");
 
-    $todolistView->deleteTodoList();
+//     $todolistView->deleteTodoList();
 
-    $todolistView->showTodoList();
-}
-
-testDeleteTodoLIst();
+//     $todolistView->showTodoList();
+// }
