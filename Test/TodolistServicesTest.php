@@ -1,51 +1,51 @@
 <?php
 
+require_once "Configuration/DBconnection.php";
 require_once "Entity/Todolist.php";
 require_once "Repository/TodoListRepository.php";
 require_once "Services/TodolistServices.php";
 
+use Config\Database;
 use Entity\TodoList;
 use Repository\TodolistRepositoryImpl;
 use Service\TodolistServicesImpl;
 
 function testShowTodoList(): void {
 
-    $todolistRepository = new TodolistRepositoryImpl();
-
-    $todolistRepository->todolist[1] = new TodoList("Belajar PHP Dasar");
-    $todolistRepository->todolist[2] = new TodoList("Belajar PHP Intermediate");
-    $todolistRepository->todolist[3] = new TodoList("Belajar PHP Advanced");
-
+    $connection = Database::getConnection();
+    $todolistRepository = new TodolistRepositoryImpl($connection);
     $todolistService = new TodolistServicesImpl($todolistRepository);
-
-    $todolistService->showTodoList();
-
-}
-
-function testAddTodoList(): void {
-
-    $todolistRepository = new TodolistRepositoryImpl();
-    $todolistService = new TodolistServicesImpl($todolistRepository);
-
-    $todolistService->addTodoList('Coding 12 Hours');
-    $todolistService->addTodoList('Coding 11 Hours');
-    $todolistService->addTodoList('Coding 10 Hours');
 
     $todolistService->showTodoList();
 }
 
-function testDeleteTodoList(): void {
-    $todolistRepository = new TodolistRepositoryImpl();
-    $todolistService = new TodolistServicesImpl($todolistRepository);
+testShowTodoList();
 
-    $todolistService->addTodoList('Coding 12 Hours');
-    $todolistService->addTodoList('Coding 11 Hours');
-    $todolistService->addTodoList('Coding 10 Hours');
+// function testAddTodoList(): void {
+    
+//     $connection = Database::getConnection();
+//     $todolistRepository = new TodolistRepositoryImpl($connection);
+//     $todolistService = new TodolistServicesImpl($todolistRepository);
 
-    $todolistService->showTodoList();
+//     $todolistService->addTodoList('Coding 12 Hours');
+//     $todolistService->addTodoList('Coding 11 Hours');
+//     $todolistService->addTodoList('Coding 10 Hours');
 
-    $todolistService->deleteTodoList(1);
-    $todolistService->showTodoList();
-}
+//     $todolistService->showTodoList();
+// }
 
-testDeleteTodoList();
+// testAddTodoList();
+
+// function testDeleteTodoList(): void {
+
+//     $connection = Database::getConnection();
+//     $todolistRepository = new TodolistRepositoryImpl($connection);
+//     $todolistService = new TodolistServicesImpl($todolistRepository);
+
+//     $todolistService->deleteTodoList(4) . PHP_EOL;
+//     $todolistService->deleteTodoList(3) . PHP_EOL;
+//     $todolistService->deleteTodoList(2) . PHP_EOL;
+//     $todolistService->deleteTodoList(1) . PHP_EOL;
+// }
+
+// testDeleteTodoList();
