@@ -34,4 +34,18 @@ function testAddTodoList(): void {
     $todolistService->showTodoList();
 }
 
-testShowTodoList();
+function testDeleteTodoList(): void {
+    $todolistRepository = new TodolistRepositoryImpl();
+    $todolistService = new TodolistServicesImpl($todolistRepository);
+
+    $todolistService->addTodoList('Coding 12 Hours');
+    $todolistService->addTodoList('Coding 11 Hours');
+    $todolistService->addTodoList('Coding 10 Hours');
+
+    $todolistService->showTodoList();
+
+    $todolistService->deleteTodoList(1);
+    $todolistService->showTodoList();
+}
+
+testDeleteTodoList();

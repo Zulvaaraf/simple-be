@@ -10,7 +10,7 @@ interface TodolistServices {
 
     public function addTodoList(string $todo): void;
 
-    // public function deleteTodoList(int $number): void;
+    public function deleteTodoList(int $number): void;
 }
 
 class TodolistServicesImpl implements TodolistServices {
@@ -37,8 +37,12 @@ class TodolistServicesImpl implements TodolistServices {
 
     }
 
-    // public function deleteTodoList(int $number): void
-    // {
-        
-    // }
+    public function deleteTodoList(int $number): void
+    {
+        if ($this->todolistRepository->delete($number)) {
+            echo "Success! todolist have been deleted..\n";
+        } else {
+            echo "Failed!\n";
+        }
+    }
 }
